@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
-ARG NODEVERSION="18"
-ARG CAPVER="7.2"
+ARG NODEVERSION="20.9.0"
+ARG CAPVER="7.2.0"
 
 FROM node:${NODEVERSION}
 # or use `FROM node:<NODEVERSION>` to match a specific Node version
