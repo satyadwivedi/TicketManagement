@@ -7,16 +7,18 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7.2.0",
-    "express": "^4",
     "@sap/cds-hana": "^2",
     "@sap/xssec": "^3",
+    "express": "^4",
     "passport": "^0"
   },
   "devDependencies": {
+    "@cap-js/cds-typer": ">=0.1",
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7.2.0",
     "@sap/eslint-plugin-cds": "^3",
-    "eslint": "^9"
+    "eslint": "^9",
+    "ts-jest": "^29.1.4"
   },
   "engines": {
     "node": "^20"
@@ -44,13 +46,17 @@
           }
         }
       },
-      "[hybrid]": {
-        "db": "hana"
+      "[development]": {
+        "db": "sqlite",
+        "credentials": { "url": "db.sqlite" } 
       },
       "[production]": {
         "auth": "xsuaa",
         "db": "hana"
       }
     }
+  },
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
   }
 }

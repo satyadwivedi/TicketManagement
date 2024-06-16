@@ -15,6 +15,13 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    }, {
+      "name": "cds watch",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "cds-ts watch",
+      "cwd": "${workspaceFolder}",
+
     }
   ]
 }

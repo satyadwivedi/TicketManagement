@@ -13,10 +13,10 @@ entity Customers : cuid, managed {
        email          : EMailAddress;
        phone          : PhoneNumber;
        creditCardNo   : String(16) @assert.format: '^[1-9]\d{15}$';
-       tickets        : Association to many Tickets on tickets.customer = $self
+       incidents        : Association to many Incidents on incidents.customer = $self
 }
 
-entity Tickets : cuid, managed {
+entity Incidents : cuid, managed {
     key ticketID      : String(10);
         title         : String(255);
         otherDetails  : String;
@@ -53,6 +53,14 @@ entity Urgency : CodeList {
 
 type EMailAddress : String;
 type PhoneNumber  : String;
+
+type customTicket {
+        title: String(255);
+        description: String;
+        urgency: String(1);
+        status: String(1);
+}
+
 
 
 

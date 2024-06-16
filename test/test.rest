@@ -1,8 +1,13 @@
 
 ### Access granted to alice due to existing policy
 GET http://localhost:4004/processor/Incidents
-Authorization: Basic bob:wonderland
+Authorization: Basic alice:23213
 
 ### Access denied to bob due to missing policy
 GET http://localhost:4004/odata/v4/admin/$metadata
 Authorization: Basic alice:builder
+
+
+###
+GET http://localhost:4004/processor/Incidents
+Authorization: Basic alice:23213
