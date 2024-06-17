@@ -24,7 +24,8 @@
     "node": "^20"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "start:ts": "cds-ts serve"
   },
   "cds": {
     "requires": {

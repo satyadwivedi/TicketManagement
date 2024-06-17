@@ -51,9 +51,14 @@ async function genid (req) {
 }
 */
 
-import { Service } from '@sap/cds'
+import { Service, Request } from '@sap/cds'
+//import { cds } from '@sap/cds'
+//import  cds  from '@sap/cds' 
+import type { Incidents } from '#cds-models/cap/satya'
 
+ 
 export = (srv: Service) =>{
+
 
     srv.before('READ', 'Incidents', async(req) => {
         console.log('before incident read')
@@ -61,6 +66,23 @@ export = (srv: Service) =>{
 
     srv.after('READ', 'Incidents', async(req) => {
         console.log('after incident read')
+    })
+
+    srv.on('myCustAction', async (req: Request) => {
+        console.log('my myCustAction  called')
+        console.log('data = ', req.data)
+
+       // const { Incidents } = require('#cds-models/cap/satya')
+       //const { Incidents } = await import('#cds-models/cap/satya')
+       const { Incidents } = require('#cds-models/com/satya')
+      
+
+
+       
+
+        console.log('Incidents')
+
+
     })
 
 }

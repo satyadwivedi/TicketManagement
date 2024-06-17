@@ -11,3 +11,16 @@ Authorization: Basic alice:builder
 ###
 GET http://localhost:4004/processor/Incidents
 Authorization: Basic alice:23213
+
+
+###
+POST  http://localhost:4004/processor/myCustAction
+Authorization: Basic alice:23213
+Content-Type: application/json
+
+{
+    "name": "satya"
+}
+
+
+
