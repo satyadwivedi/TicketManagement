@@ -54,7 +54,7 @@ async function genid (req) {
 import { Service, Request } from '@sap/cds'
 //import { cds } from '@sap/cds'
 //import  cds  from '@sap/cds' 
-import type { Incidents } from '#cds-models/cap/satya'
+//import type { Incidents } from '#cds-models/cap/satya'
 
  
 export = (srv: Service) =>{
@@ -75,12 +75,11 @@ export = (srv: Service) =>{
        // const { Incidents } = require('#cds-models/cap/satya')
        //const { Incidents } = await import('#cds-models/cap/satya')
        const { Incidents } = require('#cds-models/com/satya')
-      
 
-
-       
-
-        console.log('Incidents')
+       const aIncidents = await SELECT.from(Incidents)
+    //   const aIncidents1  = await SELECT `from ${aIncidents} where search((title,descr),'y')`
+    
+        console.log('Incidents', aIncidents)
 
 
     })
